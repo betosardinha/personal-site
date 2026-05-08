@@ -1,42 +1,93 @@
-# sv
+# Personal Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+![Site Version](https://img.shields.io/github/package-json/v/betosardinha/personal-site)
+![GitHub branch status](https://img.shields.io/github/checks-status/betosardinha/personal-site/main)
+![Node Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fbetosardinha%2Fpersonal-site%2Fraw%2Fmain%2Fpackage.json&query=%24.engines.node&logo=nodedotjs&label=Node.js&color=%235FA04E)
+![TypeScript Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fbetosardinha%2Fpersonal-site%2Fraw%2Fmain%2Fpackage.json&query=%24.devDependencies.typescript&logo=typescript&label=TypeScript&color=%233178C6)
+![SvelteKit Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fbetosardinha%2Fpersonal-site%2Fraw%2Fmain%2Fpackage.json&query=%24.devDependencies.@sveltejs/kit&logo=svelte&label=SvelteKit&color=%23FF3E00)
+![Docker](https://img.shields.io/badge/Docker-enabled-2496ED?logo=docker)
+[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
 
-## Creating a project
 
-If you're seeing this, you've probably already done this step. Congrats!
+Personal website and digital space for experiments and projects.
 
-```sh
-# create a new project
-npx sv create my-app
+## Install
+
+The project is fully Docker friendly, and no local Node.js version or packages are required.
+
+To build the application image, run:
+
+```bash
+docker compose build
 ```
 
-To recreate this project with the same configuration:
+You can also use the provided Makefile:
 
-```sh
-# recreate this project
-pnpm dlx sv@0.15.2 create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography" sveltekit-adapter="adapter:auto" --install pnpm personal-site
+```bash
+make build
 ```
 
-## Developing
+## Usage
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Run container:
 
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```bash
+make up
 ```
 
-## Building
+Run detached container:
 
-To create a production version of your app:
-
-```sh
-npm run build
+```bash
+make upd
 ```
 
-You can preview the production build with `npm run preview`.
+Stop container:
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+make down
+```
+
+Show logs:
+
+```bash
+make logs
+```
+
+Run linter:
+
+```bash
+make lint
+```
+
+Run formatter:
+
+```bash
+make format
+```
+
+Run type and Svelte checks:
+
+```bash
+make check
+```
+
+Run all validations and formatting:
+
+```bash
+make validate
+```
+
+## Maintainers
+
+[@betosardinha](https://github.com/betosardinha)
+
+## Contributing
+
+Feel free to [open an issue](https://github.com/betosardinha/personal-site/issues).
+
+If editing the README, please follow the
+[standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+
+## License
+
+[MIT](LICENSE) 2026 © Alberto Sardinha
