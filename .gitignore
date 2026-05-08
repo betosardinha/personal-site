@@ -1,4 +1,6 @@
+# dependencies
 node_modules
+.pnpm-store
 
 # Output
 .output
@@ -21,3 +23,19 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# logs
+*.log
+
+# editors
+.vscode
+.idea
+
+# docker
+docker-data
+
+# coverage
+coverage
+
+# typescript
+*.tsbuildinfo
