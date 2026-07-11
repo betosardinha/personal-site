@@ -8,7 +8,6 @@
 ![Docker](https://img.shields.io/badge/Docker-enabled-2496ED?logo=docker)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg)](https://github.com/RichardLitt/standard-readme)
 
-
 Personal website and digital space for experiments and projects.
 
 ## Install
