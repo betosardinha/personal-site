@@ -6,8 +6,8 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
-  <title>Beto Sardinha</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <title>betosardinha</title>
   <meta name="description" content="Personal website" />
 </svelte:head>
 
