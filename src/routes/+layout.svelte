@@ -1,6 +1,6 @@
 <script lang="ts">
   import './layout.css';
-  import favicon from '$lib/assets/favicon.svg';
+  import Navbar from '$lib/components/Navbar.svelte';
 
   let { children } = $props();
 </script>
@@ -11,6 +11,10 @@
   <meta name="description" content="Personal website" />
 </svelte:head>
 
-<main class="flex-1 px-10 md:px-40">
+<header class="px-10 lg:px-80 sticky top-2">
+  <Navbar />
+</header>
+
+<main class="flex-1 px-10 lg:px-80 mt-8">
   {@render children?.()}
 </main>

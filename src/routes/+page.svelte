@@ -1,4 +1,4 @@
-<section id="about" class="mb-16">
+<section id="about" class="mb-16 scroll-mt-12">
   <h1 class="mb-6 text-2xl font-semibold text-neutral-900">About</h1>
   <p class="mb-4 text-neutral-600">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
