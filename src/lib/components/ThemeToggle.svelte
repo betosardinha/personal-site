@@ -1,7 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Button } from '$lib/components/ui/button/index.js';
-  import { Sun, Moon } from '@lucide/svelte';
+  import Sun from '@lucide/svelte/icons/sun';
+  import Moon from '@lucide/svelte/icons/moon';
+
+  let { class: className }: { class?: string } = $props();
 
   let dark = $state(false);
 
@@ -16,7 +19,7 @@
   }
 </script>
 
-<Button variant="ghost" size="icon" onclick={toggle} aria-label="Toggle theme">
+<Button variant="ghost" size="icon" class={className} onclick={toggle} aria-label="Toggle theme">
   {#if dark}
     <Sun size={18} />
   {:else}

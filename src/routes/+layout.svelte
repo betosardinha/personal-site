@@ -11,10 +11,10 @@
   <meta name="description" content="Personal website" />
 </svelte:head>
 
-<header class="px-10 lg:px-80 sticky top-2">
+<header class="px-10 xl:px-80 lg:px-50 md:px-40 sticky top-0 bg-background pb-4 z-10">
   <Navbar />
 </header>
 
-<main class="flex-1 px-10 lg:px-80 mt-8">
+<main class="flex-1 px-10 xl:px-80 lg:px-50 md:px-40 mt-8">
   {@render children?.()}
 </main>
