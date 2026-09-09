@@ -10,6 +10,10 @@
         if (t === 'dark' || (t == null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark');
         }
+        var c = localStorage.getItem('accent-color');
+        if (c) {
+          document.documentElement.style.setProperty('--accent-color', c);
+        }
       })();
     </script>
     %sveltekit.head%
