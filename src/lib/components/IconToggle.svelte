@@ -11,7 +11,14 @@
     onToggle?: (pressed: boolean) => void;
   }
 
-  let { pressed = $bindable(false), onIcon, offIcon, label, class: className, onToggle }: Props = $props();
+  let {
+    pressed = $bindable(false),
+    onIcon,
+    offIcon,
+    label,
+    class: className,
+    onToggle
+  }: Props = $props();
 
   let Icon = $derived(pressed ? onIcon : offIcon);
 
