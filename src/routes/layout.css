@@ -31,7 +31,10 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --accent-color: #ef4444;
+  --accent-color: var(--accent-color-red);
+  --accent-color-red: #ef4444;
+  --accent-color-blue: #3b82f6;
+  --accent-color-green: #22c55e;
 }
 
 .dark {

@@ -1,21 +1,24 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Button } from '$lib/components/ui/button/index.js';
   import Palette from '@lucide/svelte/icons/palette';
+  import * as Popover from '$lib/components/ui/popover/index.js';
+  import { buttonVariants } from '$lib/components/ui/button/index.js';
+  import { RadioGroup, RadioGroupItem } from '$lib/components/ui/radio-group/index.js';
+  import { cn } from '$lib/utils.js';
 
   let { class: className }: { class?: string } = $props();
 
   const colors = [
-    { name: 'Red', value: '#ef4444' },
-    { name: 'Blue', value: '#3b82f6' },
-    { name: 'Green', value: '#22c55e' }
+    { name: 'Red', value: 'var(--accent-color-red)' },
+    { name: 'Blue', value: 'var(--accent-color-blue)' },
+    { name: 'Green', value: 'var(--accent-color-green)' }
   ];
 
   let open = $state(false);
   let selected = $state(colors[0].value);
 
   onMount(() => {
-    selected = getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim() || colors[0].value;
+    selected = localStorage.getItem('accent-color') ?? colors[0].value;
   });
 
   function select(value: string) {
@@ -26,30 +29,16 @@
   }
 </script>
 
-<div class="relative">
-  <Button variant="ghost" size="icon" class={className} onclick={() => (open = !open)} aria-label="Change accent color">
+<Popover.Root bind:open>
+  <Popover.Trigger class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), className)} aria-label="Change accent color">
     <Palette size={18} />
-  </Button>
+  </Popover.Trigger>
 
-  {#if open}
-    <button
-      type="button"
-      class="fixed inset-0 z-10 cursor-default"
-      aria-label="Close color picker"
-      onclick={() => (open = false)}
-    ></button>
-    <div class="absolute top-full right-0 z-20 mt-2 flex gap-2 rounded-md border border-border bg-background p-2 shadow-md">
+  <Popover.Content class="w-fit">
+    <RadioGroup value={selected} onValueChange={select} class="flex flex-row gap-2">
       {#each colors as color (color.value)}
-        <button
-          type="button"
-          class="size-6 rounded-full ring-offset-2 ring-offset-background transition-transform hover:scale-110"
-          class:ring-2={selected === color.value}
-          class:ring-foreground={selected === color.value}
-          style:background-color={color.value}
-          aria-label={color.name}
-          onclick={() => select(color.value)}
-        ></button>
+        <RadioGroupItem value={color.value} style="background-color:{color.value}" aria-label={color.name} />
       {/each}
-    </div>
-  {/if}
-</div>
+    </RadioGroup>
+  </Popover.Content>
+</Popover.Root>
