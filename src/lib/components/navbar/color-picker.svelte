@@ -30,14 +30,21 @@
 </script>
 
 <Popover.Root bind:open>
-  <Popover.Trigger class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), className)} aria-label="Change accent color">
+  <Popover.Trigger
+    class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), className)}
+    aria-label="Change accent color"
+  >
     <Palette size={18} />
   </Popover.Trigger>
 
   <Popover.Content class="w-fit">
     <RadioGroup value={selected} onValueChange={select} class="flex flex-row gap-2">
       {#each colors as color (color.value)}
-        <RadioGroupItem value={color.value} style="background-color:{color.value}" aria-label={color.name} />
+        <RadioGroupItem
+          value={color.value}
+          style="background-color:{color.value}"
+          aria-label={color.name}
+        />
       {/each}
     </RadioGroup>
   </Popover.Content>

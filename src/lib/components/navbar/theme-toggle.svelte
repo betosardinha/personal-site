@@ -4,7 +4,7 @@
   import Sun from '@lucide/svelte/icons/sun';
   import Moon from '@lucide/svelte/icons/moon';
 
-  let { class: className }: {class?: string;} = $props();
+  let { class: className }: { class?: string } = $props();
 
   let dark = $state(false);
 
